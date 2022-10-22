@@ -73,6 +73,112 @@
           </div>
         </div>
 
+        <button
+          id="dropdownDefault"
+          data-dropdown-toggle="dropdown"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          type="button"
+        >
+          {{ schoolType }}
+          <svg
+            class="ml-2 w-4 h-4"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <!-- Dropdown menu -->
+        <div
+          id="dropdown"
+          class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+          data-popper-reference-hidden=""
+          data-popper-escaped=""
+          data-popper-placement="bottom"
+          style="
+            position: absolute;
+            inset: 0px auto auto 0px;
+            margin: 0px;
+            transform: translate3d(0px, 251.2px, 0px);
+          "
+        >
+          <ul
+            class="py-1 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownDefault"
+            v-for="(type, index) in schoolTypes"
+            :key="index"
+          >
+            <li>
+              <a
+                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                @click="schoolType = type"
+                >{{ type }}</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <button
+          id="dropdownDefault"
+          data-dropdown-toggle="dropdown"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          type="button"
+        >
+          {{ schoolName }}
+          <svg
+            class="ml-2 w-4 h-4"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <!-- Dropdown menu -->
+        <div
+          id="dropdown"
+          class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+          data-popper-reference-hidden=""
+          data-popper-escaped=""
+          data-popper-placement="bottom"
+          style="
+            position: absolute;
+            inset: 0px auto auto 0px;
+            margin: 0px;
+            transform: translate3d(0px, 251.2px, 0px);
+          "
+        >
+          <ul
+            class="py-1 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownDefault"
+            v-for="(school, index) in schoolsByType"
+            :key="index"
+          >
+            <li>
+              <a
+                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                @click="schoolType = school"
+                >{{ school }}</a
+              >
+            </li>
+          </ul>
+        </div>
+
         <div class="flex items-center justify-between">
           <div class="flex items-center">
             <input
@@ -121,9 +227,35 @@ export default {
       lastName: "",
       username: "",
       password: "",
+      schoolType: "School Type",
+      schoolName: "School Name",
+      schoolTypes: {},
+      schoolsByType: {},
     };
   },
   methods: {
+    getSchoolType() {
+      axios
+        .get("http://localhost:8080/types")
+        .then((response) => {
+          console.log(response.data);
+          this.schoolTypes = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getSchoolsByType() {
+      axios
+        .get("http://localhost:8080/schools")
+        .then((response) => {
+          console.log(response.data);
+          this.schoolsByType = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     async login(data: any) {
       await axios
         .post("http://localhost:8080/api/user/register", data, {
@@ -138,10 +270,11 @@ export default {
     },
     submit(e: any) {
       let data = {
-        firstName: "",
-        lastName: "",
-        username: "",
-        password: "",
+        firstName: this.firstName,
+        lastName: this.lastName,
+        username: this.username,
+        password: this.password,
+        schoolDto: {},
       };
       this.login(data);
       e.preventDefault();
