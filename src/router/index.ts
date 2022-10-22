@@ -15,6 +15,11 @@ const router = createRouter({
       component: HomeView,
       children: [
         {
+          path: "/rooms",
+          name: "rooms",
+          component: Rooms,
+        },
+        {
           path: "/rooms/:id",
           component: RoomDetails,
           name: "room-details",
@@ -30,11 +35,6 @@ const router = createRouter({
       path: "/register",
       name: "register",
       component: Register,
-    },
-    {
-      path: "/rooms",
-      name: "rooms",
-      component: Rooms,
     },
   ],
 });

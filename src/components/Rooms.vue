@@ -19,9 +19,6 @@ export default {
 </script>
 
 <template>
-  <header>
-    <Navbar></Navbar>
-  </header>
   <div class="flex row">
     <div
       @click="goToDetails(room.id.toString())"
