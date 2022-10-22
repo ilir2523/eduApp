@@ -117,6 +117,7 @@ export default {
         })
         .then((res) => {
           console.log(res.data.data);
+          localStorage.setItem("user", JSON.stringify(res.data.data));
         });
     },
     submit(e: any) {

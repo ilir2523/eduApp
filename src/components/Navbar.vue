@@ -8,7 +8,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { Bars3Icon, BellIcon, XMarkIcon, UserCircleIcon } from "@heroicons/vue/24/outline";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
@@ -86,14 +86,10 @@ export default {
           <Menu as="div" class="relative ml-3">
             <div>
               <MenuButton
-                class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
                 <span class="sr-only">Open user menu</span>
-                <img
-                  class="h-8 w-8 rounded-full"
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                />
+                <UserCircleIcon class="h-6 w-6" />
               </MenuButton>
             </div>
             <transition
