@@ -17,8 +17,10 @@
         <p class="mt-2 text-center text-sm text-gray-600">
           Or
           {{ " " }}
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"
-            >start your 14-day free trial</a
+          <router-link
+            to="/register"
+            class="font-medium text-indigo-600 hover:text-indigo-500"
+            >Sign up</router-link
           >
         </p>
       </div>
@@ -94,6 +96,7 @@
 
 <script setup lang="ts">
 import { LockClosedIcon } from "@heroicons/vue/20/solid";
+import { RouterLink } from "vue-router";
 </script>
 
 <script lang="ts">
