@@ -6,5 +6,7 @@ import Navbar from "../components/Navbar.vue";
   <header>
     <Navbar />
   </header>
-  <main></main>
+  <main class="flex justify-center mt-32">
+    <RouterView> </RouterView>
+  </main>
 </template>
