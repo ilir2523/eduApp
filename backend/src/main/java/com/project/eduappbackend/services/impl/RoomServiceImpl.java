@@ -1,5 +1,8 @@
 package com.project.eduappbackend.services.impl;
 
+import com.project.eduappbackend.dtos.QuizAnswerDto;
+import com.project.eduappbackend.dtos.QuizDto;
+import com.project.eduappbackend.dtos.QuizQuestionDto;
 import com.project.eduappbackend.dtos.RoomDto;
 import com.project.eduappbackend.mappers.*;
 import com.project.eduappbackend.models.*;
@@ -24,6 +27,12 @@ public class RoomServiceImpl implements RoomService {
     @Autowired
     RoomUserRepository roomUserRepository;
     @Autowired
+    QuizRepository quizRepository;
+    @Autowired
+    QuizQuestionRepository quizQuestionRepository;
+    @Autowired
+    QuizAnswerRepository quizAnswerRepository;
+    @Autowired
     UserMapper userMapper;
     @Autowired
     SchoolMapper schoolMapper;
@@ -33,6 +42,12 @@ public class RoomServiceImpl implements RoomService {
     TopicMapper topicMapper;
     @Autowired
     RoomMapper roomMapper;
+    @Autowired
+    QuizMapper quizMapper;
+    @Autowired
+    QuizQuestionMapper quizQuestionMapper;
+    @Autowired
+    QuizAnswerMapper quizAnswerMapper;
 
     @Override
     public List<RoomDto> getPublicRooms(Integer topicId, Integer schoolTypeId) throws Exception {
@@ -104,5 +119,42 @@ public class RoomServiceImpl implements RoomService {
         room.setCreator(creator);
         roomRepository.save(room);
         return roomMapper.toDto(room);
+    }
+
+    @Override
+    public boolean checkIfMemberRoom(Integer roomId, Integer userId) {
+        RoomUser roomUser = roomUserRepository.findByRoomAndUser(roomId, userId);
+        return roomUser != null;
+    }
+
+    @Override
+    public List<QuizDto> getQuizesForRoom(Integer roomId) throws Exception {
+        if (roomRepository.getByRoomId(roomId)==null) throw new Exception("Room does not exist.");
+        List<Quiz> quizzes = quizRepository.getQuizesByRoom(roomId);
+        List<QuizDto> quizDtoList = new ArrayList<>();
+        if (quizzes!=null && !quizzes.isEmpty()) {
+            for (Quiz quiz : quizzes) {
+                QuizDto quizDto = new QuizDto();
+                List<QuizQuestion> quizQuestions = quizQuestionRepository.findByQuizId(quiz.getQuizId());
+                List<QuizQuestionDto> quizQuestionDtos = new ArrayList<>();
+                for (QuizQuestion question : quizQuestions) {
+                    QuizQuestionDto quizQuestionDto = new QuizQuestionDto();
+                    quizQuestionDto = quizQuestionMapper.toDto(question);
+                    List<QuizAnswer> answers = quizAnswerRepository.findByQuestionId(question.getQuizQuestionId());
+                    List<QuizAnswerDto> quizAnswerDtos = new ArrayList<>();
+                    for (QuizAnswer answer : answers) {
+                        QuizAnswerDto quizAnswerDto = new QuizAnswerDto();
+                        quizAnswerDto = quizAnswerMapper.toDto(answer);
+                        quizAnswerDtos.add(quizAnswerDto);
+                    }
+                    quizQuestionDto.setAnswers(quizAnswerDtos);
+                    quizQuestionDtos.add(quizQuestionDto);
+                }
+                quizDto = quizMapper.toDto(quiz);
+                quizDto.setQuestions(quizQuestionDtos);
+                quizDtoList.add(quizDto);
+            }
+        }
+        return quizDtoList;
     }
 }

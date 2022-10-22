@@ -72,4 +72,14 @@ public class MainController {
     public ResponseEntity<Object> createRoom(@RequestBody RoomDto roomDto) throws Exception {
         return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.createRoom(roomDto));
     }
+
+    @GetMapping("/api/rooms/checkmember")
+    public ResponseEntity<Object> checkIfMemeberRoom(@RequestParam("roomId") Integer roomId, @RequestParam("userId") Integer userId) {
+        return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.checkIfMemberRoom(roomId, userId));
+    }
+
+    @GetMapping("/api/quizes")
+    public ResponseEntity<Object> getQuizesOfRoom(@RequestParam("roomId") Integer roomId) throws Exception {
+        return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.getQuizesForRoom(roomId));
+    }
 }
