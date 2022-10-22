@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface SchoolRepository extends JpaRepository<School, Long> {
     @Query("select s from School s where s.schoolId = :id")
-    School findById(int id);
+    School findById(Integer id);
 
     List<School> findAll();
 

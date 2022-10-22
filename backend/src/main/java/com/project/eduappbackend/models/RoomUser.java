@@ -13,7 +13,7 @@ public class RoomUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "roomsusers_id")
-    private int classUserId;
+    private Integer classUserId;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="room_id", referencedColumnName = "room_id", nullable = false)

@@ -1,18 +1,9 @@
 package com.project.eduappbackend.services.impl;
 
-import com.project.eduappbackend.dtos.LoginDto;
-import com.project.eduappbackend.dtos.SchoolDto;
-import com.project.eduappbackend.dtos.SchoolTypeDto;
-import com.project.eduappbackend.dtos.UserDto;
-import com.project.eduappbackend.mappers.SchoolMapper;
-import com.project.eduappbackend.mappers.SchoolTypeMapper;
-import com.project.eduappbackend.mappers.UserMapper;
-import com.project.eduappbackend.models.School;
-import com.project.eduappbackend.models.SchoolType;
-import com.project.eduappbackend.models.User;
-import com.project.eduappbackend.repositories.SchoolRepository;
-import com.project.eduappbackend.repositories.SchoolTypeRepository;
-import com.project.eduappbackend.repositories.UserRepository;
+import com.project.eduappbackend.dtos.*;
+import com.project.eduappbackend.mappers.*;
+import com.project.eduappbackend.models.*;
+import com.project.eduappbackend.repositories.*;
 import com.project.eduappbackend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,11 +21,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     SchoolTypeRepository schoolTypeRepository;
     @Autowired
+    TopicRepository topicRepository;
+    @Autowired
+    RoomRepository roomRepository;
+    @Autowired
     UserMapper userMapper;
     @Autowired
     SchoolMapper schoolMapper;
     @Autowired
     SchoolTypeMapper schoolTypeMapper;
+    @Autowired
+    TopicMapper topicMapper;
+    @Autowired
+    RoomMapper roomMapper;
 
     public UserDto login(LoginDto loginDto) throws Exception {
         User user = userRepository.findByUsername(loginDto.getUsername());
@@ -93,7 +92,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<SchoolDto> getSchoolsByType(String schoolType) throws Exception {
-        if (schoolTypeRepository.findByName(schoolType)==null)
+        if (schoolTypeRepository.findByType(schoolType)==null)
             throw new Exception("School type was not found.");
         List<School> schools = schoolRepository.findBySchoolType(schoolType);
         List<SchoolDto> schoolDtoList = new ArrayList<>();
@@ -105,5 +104,19 @@ public class UserServiceImpl implements UserService {
             }
         }
         return schoolDtoList;
+    }
+
+    @Override
+    public List<TopicDto> getAllTopics() {
+        List<Topic> topics = topicRepository.findAll();
+        List<TopicDto> topicDtoList = new ArrayList<>();
+        if (topics!=null && !topics.isEmpty()) {
+            for (Topic topic : topics) {
+                TopicDto topicDto = new TopicDto();
+                topicDto = topicMapper.toDto(topic);
+                topicDtoList.add(topicDto);
+            }
+        }
+        return topicDtoList;
     }
 }

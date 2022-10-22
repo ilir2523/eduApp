@@ -9,7 +9,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SchoolTypeDto {
-    private Integer schoolTypeId;
-    private String type;
+public class RoomDto {
+    private Integer roomId;
+    private String name;
+    private boolean visible;
+    private TopicDto topicDto;
+    private SchoolTypeDto schoolTypeDto;
+    private UserDto creator;
 }

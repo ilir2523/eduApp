@@ -13,7 +13,7 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room_id")
-    private int roomId;
+    private Integer roomId;
 
     @Column(name = "name")
     private String name;
@@ -28,4 +28,8 @@ public class Room {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="schooltype_id", referencedColumnName = "schooltype_id", nullable = false)
     private SchoolType schoolType;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="creator_id", referencedColumnName = "user_id", nullable = false)
+    private User creator;
 }

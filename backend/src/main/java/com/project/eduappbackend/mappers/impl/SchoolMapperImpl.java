@@ -17,7 +17,8 @@ public class SchoolMapperImpl implements SchoolMapper {
         schoolDto.setSchoolId(school.getSchoolId());
         schoolDto.setName(school.getName());
         schoolDto.setLocation(school.getLocation());
-        schoolDto.setSchoolTypeDto(schoolTypeMapper.toDto(school.getSchoolType()));
+        if (school.getSchoolType()!=null)
+            schoolDto.setSchoolTypeDto(schoolTypeMapper.toDto(school.getSchoolType()));
         return schoolDto;
     }
 }

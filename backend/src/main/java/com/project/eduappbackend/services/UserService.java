@@ -1,9 +1,6 @@
 package com.project.eduappbackend.services;
 
-import com.project.eduappbackend.dtos.LoginDto;
-import com.project.eduappbackend.dtos.SchoolDto;
-import com.project.eduappbackend.dtos.SchoolTypeDto;
-import com.project.eduappbackend.dtos.UserDto;
+import com.project.eduappbackend.dtos.*;
 
 import java.util.List;
 
@@ -15,4 +12,7 @@ public interface UserService {
     List<SchoolTypeDto> getAllSchoolTypes();
 
     List<SchoolDto> getSchoolsByType(String schoolType) throws Exception;
+
+    List<TopicDto> getAllTopics();
+
 }

@@ -21,7 +21,8 @@ public class UserMapperImpl implements UserMapper {
         userDto.setUsername(user.getUsername());
         userDto.setBirthday(user.getBirthday());
         userDto.setActive(user.isActive());
-        userDto.setSchoolDto(schoolMapper.toDto(user.getSchool()));
+        if (user.getSchool()!=null)
+            userDto.setSchoolDto(schoolMapper.toDto(user.getSchool()));
         return userDto;
     }
 

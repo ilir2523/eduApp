@@ -8,5 +8,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SchoolTypeRepository extends JpaRepository<SchoolType, Long> {
     @Query("select s from SchoolType s where s.type = :type")
-    SchoolType findByName(String type);
+    SchoolType findByType(String type);
+
+    @Query("select s from SchoolType s where s.schoolTypeId=:id")
+    SchoolType findBySchoolTypeId(Integer id);
+
+
 }

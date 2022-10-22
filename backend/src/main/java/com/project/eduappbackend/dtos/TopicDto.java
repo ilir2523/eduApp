@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SchoolTypeDto {
-    private Integer schoolTypeId;
-    private String type;
+public class TopicDto {
+    private Integer topicId;
+    private String name;
 }

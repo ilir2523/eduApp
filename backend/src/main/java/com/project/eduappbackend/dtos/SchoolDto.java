@@ -12,7 +12,7 @@ import javax.persistence.Column;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SchoolDto {
-    private int schoolId;
+    private Integer schoolId;
     private String name;
     private String location;
     private SchoolTypeDto schoolTypeDto;
