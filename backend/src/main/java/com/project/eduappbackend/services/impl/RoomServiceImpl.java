@@ -7,7 +7,12 @@ import com.project.eduappbackend.repositories.*;
 import com.project.eduappbackend.services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +34,8 @@ public class RoomServiceImpl implements RoomService {
     QuizQuestionRepository quizQuestionRepository;
     @Autowired
     QuizAnswerRepository quizAnswerRepository;
+    @Autowired
+    DocumentRepository documentRepository;
     @Autowired
     UserMapper userMapper;
     @Autowired
@@ -220,5 +227,20 @@ public class RoomServiceImpl implements RoomService {
         quizDto.setQuestions(quizQuestionDtos);
         quizDto.setResult((double) correctAnswers/totalQuestions);
         return quizDto;
+    }
+
+    public void uploadFile(MultipartFile file, Integer userId, Integer roomId) throws IOException {
+        File path = new File("C:\\eduapp\\files\\" + file.getOriginalFilename());
+        FileOutputStream output = new FileOutputStream(path);
+        output.write(file.getBytes());
+        output.close();
+        Document document = new Document();
+        document.setName(file.getName());
+        document.setLocation(path.getAbsolutePath());
+        User user = userRepository.findByUserId(userId);
+        Room room = roomRepository.getByRoomId(roomId);
+        document.setUser(user);
+        document.setRoom(room);
+        documentRepository.save(document);
     }
 }

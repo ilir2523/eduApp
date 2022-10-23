@@ -3,6 +3,7 @@ package com.project.eduappbackend.controllers;
 import com.project.eduappbackend.dtos.*;
 import com.project.eduappbackend.services.RoomService;
 import com.project.eduappbackend.services.UserService;
+import com.project.eduappbackend.util.FileSystemRepository;
 import com.project.eduappbackend.util.ResponseHandler;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class MainController {
     UserService userService;
     @Autowired
     RoomService roomService;
+
+    @Autowired
+    FileSystemRepository fIleSystemRepository;
 
     @PostMapping("/api/user/login")
     public ResponseEntity<Object> login(@RequestBody LoginDto login) throws Exception {
@@ -91,4 +95,10 @@ public class MainController {
     public ResponseEntity<Object> takeQuiz(@RequestBody TakeQuiz takeQuiz) throws Exception {
         return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.takeQuiz(takeQuiz));
     }
+
+//    @PostMapping("/api/files/upload")
+//    public ResponseEntity<Object> uploadFile(@RequestPart("file") MultipartFile file) throws Exception {
+//        return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService);
+//    }
+//    
 }
