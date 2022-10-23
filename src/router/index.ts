@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import Register from "../components/Register.vue";
 import RoomDetails from "../components/RoomDetails.vue";
 import Rooms from "../components/Rooms.vue";
+import ProfileVue from "@/components/Profile.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +37,11 @@ const router = createRouter({
       name: "register",
       component: Register,
     },
+    {
+      path: "/profile",
+      name: "profile",
+      component: ProfileVue,
+    }
   ],
 });
 

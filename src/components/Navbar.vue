@@ -8,19 +8,20 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import { Bars3Icon, BellIcon, XMarkIcon, UserCircleIcon } from "@heroicons/vue/24/outline";
+import {
+  Bars3Icon,
+  BellIcon,
+  XMarkIcon,
+  UserCircleIcon,
+} from "@heroicons/vue/24/outline";
 
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-];
+const navigation = [{ name: "Dashboard", href: "/rooms", current: true }];
 </script>
 
 <script lang="ts">
 export default {
   name: "NavbarComponent",
+  methods: {},
 };
 </script>
 
@@ -41,18 +42,6 @@ export default {
         <div
           class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
         >
-          <div class="flex flex-shrink-0 items-center">
-            <img
-              class="block h-8 w-auto lg:hidden"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
-            <img
-              class="hidden h-8 w-auto lg:block"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
-          </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <a
@@ -60,7 +49,7 @@ export default {
                 :key="item.name"
                 :href="item.href"
                 :class="[
-                  item.current
+                  $router.currentRoute.value.fullPath == '/rooms'
                     ? 'bg-gray-900 text-white'
                     : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                   'px-3 py-2 rounded-md text-sm font-medium',
@@ -105,7 +94,7 @@ export default {
               >
                 <MenuItem v-slot="{ active }">
                   <a
-                    href="#"
+                    href="/profile"
                     :class="[
                       active ? 'bg-gray-100' : '',
                       'block px-4 py-2 text-sm text-gray-700',

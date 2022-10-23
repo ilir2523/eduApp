@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/require-v-for-key -->
 <template>
   <div
     class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
@@ -130,6 +131,9 @@ export default {
       schoolsByType: [{ id: 0, label: "Select School" }],
     };
   },
+  mounted() {
+    this.getSchoolType();
+  },
   methods: {
     formatData(res: Array<object>) {
       let data = {
@@ -140,18 +144,21 @@ export default {
     },
     getSchoolType() {
       axios
-        .get("http://localhost:8080/types")
+        .get("http://localhost:8080/api/schools/types", {})
         .then((response) => {
           console.log(response.data.data);
           this.schoolTypes = this.formatData(response.data.data);
+          this.getSchoolsByType(this.schoolType);
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    getSchoolsByType() {
+    getSchoolsByType(type: string) {
       axios
-        .get("http://localhost:8080/schools")
+        .get("http://localhost:8080/api/schools", {
+          params: { schoolType: type },
+        })
         .then((response) => {
           console.log(response.data.data);
           this.schoolsByType = this.formatData(response.data.data);
