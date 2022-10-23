@@ -21,9 +21,6 @@ public class MainController {
     @Autowired
     RoomService roomService;
 
-    @Autowired
-    FileSystemRepository fIleSystemRepository;
-
     @PostMapping("/api/user/login")
     public ResponseEntity<Object> login(@RequestBody LoginDto login) throws Exception {
         return ResponseHandler.generateResponse("OK", HttpStatus.OK, userService.login(login));
@@ -100,5 +97,5 @@ public class MainController {
 //    public ResponseEntity<Object> uploadFile(@RequestPart("file") MultipartFile file) throws Exception {
 //        return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService);
 //    }
-//    
+//
 }

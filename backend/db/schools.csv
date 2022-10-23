@@ -1,0 +1,413 @@
+school_id,name,location,schooltype_id
+1,Starove,Berat,1
+2,Sinjë,Berat,1
+3,Roshnik,Berat,1
+4,Lapardha,Berat,1
+5,Shyqyri Lakra,Berat,1
+6,B.d.karbunara,Berat,1
+7,Kristaq Capo,Berat,1
+8,Kristaq Capo Shksh,Berat,1
+9,Ajet Xhindole,Berat,1
+10,Muhamer Janina,Ure Vajgurore,1
+11,Kutalli,Ure Vajgurore,1
+12,Cukalat,Ure Vajgurore,1
+13,Syzes,Ure Vajgurore,1
+14,Shefqet Shuaipi,Kuçovë,1
+15,Mbrakull,Poliçan,1
+16,Bulqizë,Bulqizë,1
+17,Zerqan,Bulqizë,1
+18,Rifat Manjani,Bulqizë,1
+19,Jani Fullani,Bulqizë,1
+20,Elez Koçi (ostren),Bulqizë,1
+21,Fushe-bulqize,Bulqizë,1
+22,Sulejman  Delvina,Delvinë,1
+23,Fuat Babani,Devoll,1
+24,Nesim Kaçani,Devoll,1
+25,Ali Feto,Devoll,1
+26,Jorgo Plaku,Devoll,1
+27,Abdulla Progri,Devoll,1
+28,Said Najdeni,Dibër,1
+29,Said Najdeni,Dibër,1
+30,Maqellarë,Dibër,1
+31,Kastriot,Dibër,1
+32,Muhurr,Dibër,1
+33,Sllovë,Dibër,1
+34,Arras,Dibër,1
+35,Zall Dardhë,Dibër,1
+36,Lurë,Dibër,1
+37,Ishëm,Durrës,1
+38,Manëz,Durrës,1
+39,Katundi Ri,Durrës,1
+40,Sukth I Ri,Durrës,1
+41,Sukth I Ri,Durrës,1
+42,Kullë,Durrës,1
+43,Besnik Hidri,Durrës,1
+44,Gjergj Kastrioti,Durrës,1
+45,Gjergj Kastrioti,Durrës,1
+46,Naim Frashëri,Durrës,1
+47,Leonik Tomeo,Durrës,1
+48,Olsi Lasko,Durrës,1
+49,Olsi Lasko,Durrës,1
+50,Dom Nikoll Kacorri,Durrës,1
+51,Bernardina Qeraxhia,Durrës,1
+52,Jan Kukuzeli,Durrës,1
+53,Jan Kukuzeli,Durrës,1
+54,16 Shtatori,Shijak,1
+55,Kajo Karafili,Shijak,1
+56,Kostandin Shpataraku,Elbasan,1
+57,Kodhel Dedja,Elbasan,1
+58,Miranda Baku,Cërrik,1
+59,Luigj Gurakuqi,Elbasan,1
+60,Luigj Gurakuqi,Elbasan,1
+61,Tomorr Sinani,Cërrik,1
+62,Kosovë,Belsh,1
+63,Sami Frashëri,Belsh,1
+64,Mahmut & Ali Cungu,Elbasan,1
+65,Mahmut &ali Cungu,Elbasan,1
+66,Onufri,Elbasan,1
+67,Onufri,Elbasan,1
+68,Sali N.ballkoçi,Elbasan,1
+69,11 Dëshmorët,Elbasan,1
+70,Mehmet Bajraktari,Cërrik,1
+71,Kostandin Kristoforidhi,Elbasan,1
+72,Kostandin Kristoforidhi,Elbasan,1
+73,Dhaskal Todri,Elbasan,1
+74,Vasil Kamami,Elbasan,1
+75,Mahir Domi,Elbasan,1
+76,Anastas çakalli,Elbasan,1
+77,Ibrahim Ceka,Elbasan,1
+78,Osman Gjini,Cërrik,1
+79,Ibrahim Bozhiq,Elbasan,1
+80,Dëshiran,Belsh,1
+81,Fiqiri Baltëza,Elbasan,1
+82,Ahmet Dakli,Elbasan,1
+83,JANAQ KILICA,Fier,1
+84,PERIKLI IKONOMI,Fier,1
+85,ME KOHç Tç SHKURTUAR,Fier,1
+86,JAKOV XOXA,Fier,1
+87,JAKOV XOXA,Fier,1
+88,MUSTAFA HOXHA,Fier,1
+89,VASIL SOTA,Fier,1
+90,ANDON PROFKA,Fier,1
+91,LçVIZJA DEMOKRATIKE,Fier,1
+92,JOVAN NDREKO,Fier,1
+93,KUTBI VRUZHAJ,Fier,1
+94,NAZIF ZHAVARI,Fier,1
+95,ZHANI CIKO,Patos,1
+96,MUSTAFA MATOHITI,Patos,1
+97,SOTIR çAPO,Patos,1
+98,ADEM VRAPI,Roskovec,1
+99,DIDIN BISHANI,Roskovec,1
+100,Asim  Zeneli,Gjirokastër,1
+101,Siri Shapllo,Gjirokastër,1
+102,Siri Shapllo,Gjirokastër,1
+103,Pandeli Sotiri,Gjirokastër,1
+104,Pandeli Sotiri,Gjirokastër,1
+105,Feim Ibrahimi,Gjirokastër,1
+106,Muhamet Gjollesha,Gjirokastër,1
+107,Dervician,Dropull,1
+108,Bularat,Dropull,1
+109,11 Shkurti,Libohove,1
+110,Bilal Golemi,Gjirokastër,1
+111,Shefqet Guzi,Gramsh,1
+112,Muharrem Zela,Gramsh,1
+113,Tahir Sadiku,Gramsh,1
+114,Afez Berbiu,Gramsh,1
+115,çaush Senia,Gramsh,1
+116,Xhile Liçi,Gramsh,1
+117,Xhezar Meçi,Gramsh,1
+118,Jonuz çarçiu,Gramsh,1
+119,Skenderbeu,Has,1
+120,Golaj,Has,1
+121,Ibrahim Rugova,Kamëz,1
+122,Elez Isuf Ndreu,Kamëz,1
+123,Sulejman Elezi,Kamëz,1
+124,"Gramoz Palushi, Paskuqan",Kamëz,1
+125,"Isa Boletin,  Paskuqan",Kamëz,1
+126,Mustafa K. Ataturk,Tiranë,1
+127,Shkolla Mb Kasalle,Tiranë,1
+128,Aleksandër Moisiu,Kavajë,1
+129,Aleksandër Moisiu,Kavajë,1
+130,Luz i Vogël,Kavajë,1
+131,11 Shkurti,Kavajë,1
+132,Haxhi Qehaj,Rrogozhinë,1
+133,Gosë,Rrogozhinë,1
+134,Petro Nini Luarasi,Kolonjë,1
+135,Jani Vreto,Kolonjë,1
+136,Mustafa Jashari,Kolonjë,1
+137,Pirg,Maliq,1
+138,Sheqeras,Maliq,1
+139,Podgorie,Maliq,1
+140,Mollaj,Korçë,1
+141,Voskop,Korçë,1
+142,Pojan,Maliq,1
+143,Rëmbec,Maliq,1
+144,Liqenas,Pustec,1
+145,Lozhan,Maliq,1
+146,Faik Konica,Korçë,1
+147,Raqi Qirinxhi,Korçë,1
+148,Raqi Qirinxhi,Korçë,1
+149,Themistokli Gërmenji  Gjimnaz,Korçë,1
+150,Themistokli Germenji  Bilingue,Korçë,1
+151,Maliq,Maliq,1
+152,Ymer Dishnica,Korçë,1
+153,Ymer Dishnica(koresp.),Korçë,1
+154,Tefta Tashko Koço,Korçë,1
+155,Skënderbeu Krujë,Krujë,1
+156,Skënderbeu Krujë,Krujë,1
+157,Shote Galica Fushë Krujë,Krujë,1
+158,Thumanë,Krujë,1
+159,Burizane,Krujë,1
+160,Bubq,Krujë,1
+161,Ramazan Karaj Nikël,Krujë,1
+162,5 TETORI,Kuçovë,1
+163,MYRTEZA KEPI,Kuçovë,1
+164,PERONDI,Kuçovë,1
+165,ALEKSANDER MARKAçINI,Kuçovë,1
+166,HAVZI NELA,Kukës,1
+167,HAVZI NELA,Kukës,1
+168,AHMET VOKA,Kukës,1
+169,BAJRAM ABDIU,Kukës,1
+170,QAZIM SHEHU,Kukës,1
+171,ELMAZ ADEMI,Kukës,1
+172,9 SHTATORI,Kukës,1
+173,IMER MATA,Kukës,1
+174,SHISHTAVEC,Kukës,1
+175,SHçMRI,Kukës,1
+176,BUSHTRICE,Kukës,1
+177,At'shtjefën Gjeçovi,Kurbin,1
+178,Arif halil Sulaj,Kurbin,1
+179,Milot,Kurbin,1
+180,At'shtjefën Kurti,Kurbin,1
+181,Llesh Nik Daka,Lezhë,1
+182,Zejmen,Lezhë,1
+183,Ishull Lezhë,Lezhë,1
+184,Karl Gega,Lezhë,1
+185,Gjovalin Gjadri,Lezhë,1
+186,Ndre Mjeda,Lezhë,1
+187,Pjetër Zarishi,Lezhë,1
+188,Frang Bardhi,Lezhë,1
+189,Ungrej,Lezhë,1
+190,Kalivaç,Lezhë,1
+191,TOROVICç,Lezhë,1
+192,Hydajet Lezha,Lezhë,1
+193,Hydajet Lezha,Lezhë,1
+194,Ibrahim Muça,Librazhd,1
+195,Rrahman çota,Librazhd,1
+196,Polis Gostime,Librazhd,1
+197,Shefqet   Dosku,Librazhd,1
+198,Orenjë,Librazhd,1
+199,Isak   Alla,Librazhd,1
+200,Halit Berzeshta,Prrenjas,1
+201,Sali  Halili,Prrenjas,1
+202,Dalip Toçka,Librazhd,1
+203,Ahmet Elezi,Prrenjas,1
+204,Dilaver Nezha,Prrenjas,1
+205,Arif Kuka,Prrenjas,1
+206,18 TETORI,Lushnje,1
+207,JANI NUSHI,Lushnje,1
+208,VATH KORRESHI,Lushnje,1
+209,10 KORRIKU,Lushnje,1
+210,KOLONJç,Lushnje,1
+211,PALI DANI,Lushnje,1
+212,DHIMITER MINO,Lushnje,1
+213,DITURIA,Lushnje,1
+214,PASHO KURTI,Lushnje,1
+215,ALLKAJ,Lushnje,1
+216,FIERSHEGAN,Lushnje,1
+217,HYZGJOKAJ,Lushnje,1
+218,BALLAGAT,Lushnje,1
+219,MITI ZOI ZAKA,Divjake,1
+220,çERMç SEKTOR,Divjake,1
+221,çERMç SHKUMBIN,Divjake,1
+222,GRABIAN,Divjake,1
+223,REMAS,Divjake,1
+224,MIHAL NAKO,Divjake,1
+225,KOLI ALLKANJARI,Divjake,1
+226,SHERIF HOXHA,Malësi E Madhe,1
+227,DODç KAçAJ,Malësi E Madhe,1
+228,GRUEMIRç,Malësi E Madhe,1
+229,NIKç MERNAçAJ,Malësi E Madhe,1
+230,RIFAT NUZI,Malësi E Madhe,1
+231,KOLç MARTINI,Malësi E Madhe,1
+232,DEDç GJON LULI,Malësi E Madhe,1
+233,Dervish Hekali,Mallakastër,1
+234,Dervish Hekali,Mallakastër,1
+235,Hajredin Fratari,Mallakastër,1
+236,PJETçR BUDI,Mat,1
+237,28 NçNTORI,Mat,1
+238,SHABAN  çOLLAKU,Klos,1
+239,GJERGJ  KASTRIOTI,Mat,1
+240,AHMET  XHETANI,Mat,1
+241,ABDYRRAHMAN  PçRMETI,Mat,1
+242,26 KORRIKU,Mat,1
+243,HAXHI  LATA,Klos,1
+244,XIBçR,Klos,1
+245,Rrëshen,Mirditë,1
+246,Rubik,Mirditë,1
+247,Perlat-qendër,Mirditë,1
+248,Reps,Mirditë,1
+249,Klos,Mirditë,1
+250,Zihni Magani,Peqin,1
+251,Mustafa Kemal Ataturk,Peqin,1
+252,Sami Frasheri,Përmet,1
+253,Sejfulla Maleshova,Këlcyre,1
+254,1 Maj,Përmet,1
+255,Lumo Pavari,Këlcyre,1
+256,Zyrihana Xhako,Këlcyre,1
+257,Muharrem çollaku,Pogradec,1
+258,Gjergj Pekmezi,Pogradec,1
+259,14 Engjëjt,Pogradec,1
+260,Qemal Bazelli,Pogradec,1
+261,Rexhep Xhemollari,Pogradec,1
+262,Dëshmorët E Pojskës,Pogradec,1
+263,Rodokal Sipër,Pogradec,1
+264,Selim Gjona,Pogradec,1
+265,3 Dëshmorët,Pogradec,1
+266,Velçan,Pogradec,1
+267,Sabah Sinani,Pukë,1
+268,Fushë-arrëz,Fushë-arrëz,1
+269,8 Dhjetori,Pukë,1
+270,Iballë,Fushë-arrëz,1
+271,Gojan,Pukë,1
+272,Gjegjan,Pukë,1
+273,Hasan Tahsini,Sarandë,1
+274,5 Dëshmorët,Sarandë,1
+275,Bido Sejko,Konispol,1
+276,Livadhja,Finiq,1
+277,Borsh,Himarë,1
+278,Ramiz Aranitasi,Skrapar,1
+279,Ramiz Aranitasi,Skrapar,1
+280,Muhamet Kondi,Poliçan,1
+281,Arshin Rako,Skrapar,1
+282,28 NçNTORI,Shkodër,1
+283,28 NçNTORI,Shkodër,1
+284,JORDAN MISJA,Shkodër,1
+285,OSO KUKA,Shkodër,1
+286,OSO KUKA,Shkodër,1
+287,KOLç IDROMENO,Shkodër,1
+288,KOLç IDROMENO,Shkodër,1
+289,SHEJNAZE JUKA,Shkodër,1
+290,SHEJNAZE JUKA,Shkodër,1
+291,PRENKç JAKOVA,Shkodër,1
+292,PRENKç JAKOVA,Shkodër,1
+293,OBLIKç,Shkodër,1
+294,LUCç AGRAJA,Shkodër,1
+295,FREDERIK GJON GJONI,Shkodër,1
+296,NIKOLLç ZOGORIANI,Shkodër,1
+297,AT GJON KARMA,Shkodër,1
+298,ADEM HAXHIJA,Shkodër,1
+299,MEHMET SHPENDI,Shkodër,1
+300,IMZOT LUçJAN AVGOSTINI,Vau Dejes,1
+301,NçNç TEREZA,Vau Dejes,1
+302,MJEDç,Vau Dejes,1
+303,HAJMEL,Vau Dejes,1
+304,PISTULL,Vau Dejes,1
+305,Abaz Shehu,Tepelenë,1
+306,Sali Nivica,Memaliaj,1
+307,Ormën Selami,Memaliaj,1
+308,Adem Alushi,Memaliaj,1
+309,Xhevit çela,Memaliaj,1
+310,Tafil Buzi,Memaliaj,1
+311,P.n.luarasi,Tiranë,1
+312,Qemal Stafa,Tiranë,1
+313,Partizani,Tiranë,1
+314,Besnik Sykja,Tiranë,1
+315,Arben Broci,Tiranë,1
+316,Avdulla Keta,Tiranë,1
+317,Sandër Prosi,Tiranë,1
+318,Aleks Buda,Tiranë,1
+319,Sami Frasheri,Tiranë,1
+320,Sami Frasheri,Tiranë,1
+321,Eqerem çabej,Tiranë,1
+322,A.z. çajupi,Tiranë,1
+323,Myslym Keta,Tiranë,1
+324,Ismail Qemali,Tiranë,1
+325,Ismail Qemali,Tiranë,1
+326,Sinan Tafaj,Tiranë,1
+327,Jordan Misja,Tiranë,1
+328,Loro Boriçi,Tiranë,1
+329,Koreografike,Tiranë,1
+330,Asim Vokshi,Tiranë,1
+331,Asim Vokshi,Tiranë,1
+332,K.kristoforidhi,Tiranë,1
+333,Vërri,Tiranë,1
+334,Isa Adem Boletini,Vorë,1
+335,Baldushk,Tiranë,1
+336,Mersin Duqi,Tiranë,1
+337,Kllojke,Tiranë,1
+338,Farke,Tiranë,1
+339,Myslym Shima,Tiranë,1
+340,Sadik Stvileci,Tiranë,1
+341,Krrabe,Tiranë,1
+342,Sadi Nuri,Tiranë,1
+343,16 Shtatori,Tiranë,1
+344,Shaban Sheshori,Vorë,1
+345,Ymer  Lala,Tiranë,1
+346,Bahri Nela,Tiranë,1
+347,Vaqarr,Tiranë,1
+348,Ibrahim Hasmema,Tiranë,1
+349,Kashar Qender,Tiranë,1
+350,Vajdin Lame,Vorë,1
+351,Myslim Shima,Tiranë,1
+352,Tinka Kurti,Tropoje,1
+353,Oso Dauti,Tropoje,1
+354,Hoxhë Zogu,Tropoje,1
+355,Murat Paci,Tropoje,1
+356,Ali I Bër Neza,Tropoje,1
+357,Matosh Uka,Tropoje,1
+358,Asim Vokshi,Tropoje,1
+359,Asim Vokshi,Tropoje,1
+360,NAIM FRASHçRI,Vlorë,1
+361,JANI MINGA,Vlorë,1
+362,GJIMNAZI RI,Vlorë,1
+363,ALI DEMI,Vlorë,1
+364,HALIM XHELO,Vlorë,1
+365,MUSTAFA Q. ATATURK,Vlorë,1
+366,MUSTAFA Q. ATATURK  NATA,Vlorë,1
+367,PILO PRIFTI,Vlorë,1
+368,HASAN PULO,Vlorë,1
+369,HASAN MçHILLI,Vlorë,1
+370,FASLLI DANAJ,Vlorë,1
+371,HAJREDIN BEQARI,Selenicë,1
+372,QANI NUREDINI,Selenicë,1
+373,ALI  ASLLANI,Selenicë,1
+374,LAZE NURO,Selenicë,1
+375,HAMDI RRAPI,Selenicë,1
+376,SADIK ZOTAJ,Selenicë,1
+377,MYNYR XHINDI,Selenicë,1
+378,FILO RAMADANI,Selenicë,1
+379,SPIRO GJIKNURI,Himarë,1
+380,MEMO METO,Himarë,1
+381,HORE VRANISHT,Himarë,1
+382,Universiteti i Tiranës,Tiranë,2
+383,Universiteti Politeknik i Tiranës,Tiranë,2
+384,Universiteti Bujqësor i Tiranës,Tiranë,2
+385,Universiteti i Elbasanit Aleksandër Xhuvani,Elbasan,2
+386,Universiteti Luigj Gurakuqi Shkodër,Shkodër,2
+387,Universiteti Eqrem €abej Gjirokastër,Gjirokastër,2
+388,Universiteti Fan S. Noli Kor‡ë,Korce,2
+389,Universiteti Ismail Qemali Vlorë,Vlorë,2
+390,Universiteti Aleksandër Moisiu Durrës,Durrës,2
+391,Universiteti i Arteve,Tiranë,2
+392,Universiteti i Sporteve të Tiranës,Tiranë,2
+393,"Universiteti i Mjekësisë, Tiranë",Tiranë,2
+394,Universiteti i New York-ut në Tiranë,Tiranë,2
+395,Universiteti Luarasi,Tiranë,2
+396,Universiteti Privat Albanian University,Tiranë,2
+397,Universiteti Katolik Zoja e Këshillit të Mirë,Tiranë,2
+398,Universiteti Barleti,Tiranë,2
+399,Universiteti Europian i Tiranës,Tiranë,2
+400,Universiteti Aldent,Tiranë,2
+401,Universiteti Polis,Tiranë,2
+402,Universiteti EPOKA,Tiranë,2
+403,Universiteti Mesdhetar i Shqipërisë,Tiranë,2
+404,Universiteti Metropolitan Tirana,Tiranë,2
+405,Universiteti Western Balkans,Tiranë,2
+406,Akademia Nehemiah Gateway,Tiranë,2
+407,Kolegji Universitar Qiriazi,Tiranë,2
+408,Kolegji Universitar WISDOM,Tiranë,2
+409,Kolegji Universitar Pavarësia Vlorë,Vlorë,2
+410,Kolegji Universitar LOGOS,Tiranë,2
+411,Tirana Business University College,Tiranë,2
+412,Kolegji Universitar Bedër,Tiranë,2
