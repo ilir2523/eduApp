@@ -3,6 +3,7 @@ package com.project.eduappbackend.services;
 import com.project.eduappbackend.dtos.QuizDto;
 import com.project.eduappbackend.dtos.RoomDto;
 import com.project.eduappbackend.dtos.TakeQuiz;
+import com.project.eduappbackend.models.Quiz;
 
 import java.util.List;
 
@@ -23,4 +24,6 @@ public interface RoomService {
     void createQuiz(QuizDto quizDto) throws Exception;
 
     QuizDto takeQuiz(TakeQuiz takeQuiz) throws Exception;
+
+    QuizDto getQuizDetails(Integer quizId);
 }

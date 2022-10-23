@@ -82,6 +82,11 @@ public class MainController {
         return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.getQuizesForRoom(roomId));
     }
 
+    @GetMapping("/api/quizes/details")
+    public ResponseEntity<Object> getQuizDetails(@RequestParam("quizId") Integer quizId) throws Exception {
+        return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.getQuizDetails(quizId));
+    }
+
     @PostMapping("/api/quizes/create")
     public ResponseEntity<Object> createQuiz(@RequestBody QuizDto quizDto) throws Exception {
         roomService.createQuiz(quizDto);

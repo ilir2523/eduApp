@@ -229,6 +229,30 @@ public class RoomServiceImpl implements RoomService {
         return quizDto;
     }
 
+    @Override
+    public QuizDto getQuizDetails(Integer quizId) {
+        Quiz quiz = quizRepository.getQuizById(quizId);
+        QuizDto quizDto = new QuizDto();
+        List<QuizQuestion> quizQuestions = quizQuestionRepository.findByQuizId(quiz.getQuizId());
+        List<QuizQuestionDto> quizQuestionDtos = new ArrayList<>();
+        for (QuizQuestion question : quizQuestions) {
+            QuizQuestionDto quizQuestionDto = new QuizQuestionDto();
+            quizQuestionDto = quizQuestionMapper.toDto(question);
+            List<QuizAnswer> answers = quizAnswerRepository.findByQuestionId(question.getQuizQuestionId());
+            List<QuizAnswerDto> quizAnswerDtos = new ArrayList<>();
+            for (QuizAnswer answer : answers) {
+                QuizAnswerDto quizAnswerDto = new QuizAnswerDto();
+                quizAnswerDto = quizAnswerMapper.toDto(answer);
+                quizAnswerDtos.add(quizAnswerDto);
+            }
+            quizQuestionDto.setAnswers(quizAnswerDtos);
+            quizQuestionDtos.add(quizQuestionDto);
+        }
+        quizDto = quizMapper.toDto(quiz);
+        quizDto.setQuestions(quizQuestionDtos);
+        return quizDto;
+    }
+
     public void uploadFile(MultipartFile file, Integer userId, Integer roomId) throws IOException {
         File path = new File("C:\\eduapp\\files\\" + file.getOriginalFilename());
         FileOutputStream output = new FileOutputStream(path);
