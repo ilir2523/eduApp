@@ -74,8 +74,17 @@
           </div>
         </div>
 
-        <v-select v-model="schoolType" :options="schoolTypes"></v-select>
-        <v-select v-model="school" :options="schoolsByType"></v-select>
+        <v-select
+          placeholder="School Type"
+          v-model="schoolType"
+          :options="schoolTypes"
+        ></v-select>
+        <v-select
+          placeholder="School"
+          v-model="school"
+          :options="schoolsByType"
+          :disabled="!schoolType"
+        ></v-select>
 
         <div class="flex items-center justify-between">
           <div class="flex items-center">
@@ -125,26 +134,31 @@ export default {
       lastName: "",
       username: "",
       password: "",
-      schoolType: "Select School Type",
-      school: "Select School",
-      schoolTypes: [{ id: 0, label: "Select School Type" }],
-      schoolsByType: [{ id: 0, label: "Select School" }],
+      schoolType: "",
+      school: "",
+      schoolTypes: [],
+      schoolsByType: [],
+      schoolDto: {},
     };
-  },
-  mounted() {
-    this.getSchoolType();
   },
   methods: {
     formatData(res: Array<object>) {
-      let data = {
-        label: res.map((item: any) => item.name),
-        id: res.map((item: any) => item.id),
-      };
+      let data = [...res];
+      res.forEach((item: any) => {
+        data.push({ id: item.id, label: item.name });
+      });
+      return data;
+    },
+    formatDataForSchool(res: Array<object>) {
+      let data = [...res];
+      res.forEach((item: any) => {
+        data.push({ id: item.schoolId, label: item.name });
+      });
       return data;
     },
     getSchoolType() {
       axios
-        .get("http://localhost:8080/api/schools/types", {})
+        .get("http://localhost:8080/api/schools/types")
         .then((response) => {
           console.log(response.data.data);
           this.schoolTypes = this.formatData(response.data.data);
@@ -157,11 +171,14 @@ export default {
     getSchoolsByType(type: string) {
       axios
         .get("http://localhost:8080/api/schools", {
-          params: { schoolType: type },
+          params: {
+            type: this.schoolTypes.find((_st) => this.schoolType == _st.name),
+          },
         })
         .then((response) => {
           console.log(response.data.data);
-          this.schoolsByType = this.formatData(response.data.data);
+          this.schoolsByType =
+            this.formatDataForSchool(response.data.data) || [];
         })
         .catch((error) => {
           console.log(error);
@@ -185,12 +202,18 @@ export default {
         lastName: this.lastName,
         username: this.username,
         password: this.password,
-        schoolDto: {},
+        schoolDto:
+          this.schoolsByType.find((_s) => this.school == _s.name) || {},
       };
+      console.log(this.school);
       this.login(data);
       e.preventDefault();
       this.$router.push("/");
     },
+  },
+  mounted() {
+    this.getSchoolType();
+    this.getSchoolsByType();
   },
 };
 </script>
