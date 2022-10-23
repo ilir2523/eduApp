@@ -8,20 +8,25 @@ export default {
   data() {
     return {
       rooms: [{ roomId: 0, name: "", creator: { firstName: "" } }],
+      user: null
     };
   },
   mounted() {
+  if (this.user) {
     this.getRooms();
+  }
   },
   methods: {
     goToDetails(roomId: string) {
       this.$router.push({ name: "room-details", params: { id: roomId } });
     },
+    getUser() {
+        this.user = JSON.parse(localStorage.getItem("user")!);
+    },
     getRooms() {
-      const user = JSON.parse(localStorage.getItem("user")!);
       axios
         .get("http://localhost:8080/api/rooms/user", {
-          params: { userId: user.userId },
+          params: { userId: this.user.userId },
         })
         .then((res) => {
           console.log(res.data.data);
