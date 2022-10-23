@@ -13,4 +13,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
 
     @Query("select q from QuizQuestion q where q.quiz.quizId = :quizId")
     List<QuizQuestion> findByQuizId(Integer quizId);
+
+    @Query("select count(*) from QuizQuestion q where q.quiz.quizId = :quizId")
+    int getNumberOfQuestions(Integer quizId);
 }

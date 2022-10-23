@@ -12,4 +12,7 @@ public interface QuizRepository extends JpaRepository<Quiz, Long> {
 
     @Query("select q from Quiz q where q.room.roomId = :roomId")
     List<Quiz> getQuizesByRoom(Integer roomId);
+
+    @Query("select q from Quiz q where q.quizId = :quizId")
+    Quiz getQuizById(Integer quizId);
 }

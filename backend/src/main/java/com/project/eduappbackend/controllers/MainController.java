@@ -1,8 +1,6 @@
 package com.project.eduappbackend.controllers;
 
-import com.project.eduappbackend.dtos.LoginDto;
-import com.project.eduappbackend.dtos.RoomDto;
-import com.project.eduappbackend.dtos.UserDto;
+import com.project.eduappbackend.dtos.*;
 import com.project.eduappbackend.services.RoomService;
 import com.project.eduappbackend.services.UserService;
 import com.project.eduappbackend.util.ResponseHandler;
@@ -81,5 +79,16 @@ public class MainController {
     @GetMapping("/api/quizes")
     public ResponseEntity<Object> getQuizesOfRoom(@RequestParam("roomId") Integer roomId) throws Exception {
         return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.getQuizesForRoom(roomId));
+    }
+
+    @PostMapping("/api/quizes/create")
+    public ResponseEntity<Object> createQuiz(@RequestBody QuizDto quizDto) throws Exception {
+        roomService.createQuiz(quizDto);
+        return ResponseHandler.generateResponse("OK", HttpStatus.OK);
+    }
+
+    @PostMapping("/api/quizes/takequiz")
+    public ResponseEntity<Object> takeQuiz(@RequestBody TakeQuiz takeQuiz) throws Exception {
+        return ResponseHandler.generateResponse("OK", HttpStatus.OK, roomService.takeQuiz(takeQuiz));
     }
 }

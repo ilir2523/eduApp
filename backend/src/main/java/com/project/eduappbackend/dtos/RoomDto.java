@@ -16,4 +16,5 @@ public class RoomDto {
     private TopicDto topicDto;
     private SchoolTypeDto schoolTypeDto;
     private UserDto creator;
+    private int members;
 }

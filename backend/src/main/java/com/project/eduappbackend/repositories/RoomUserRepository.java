@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface RoomUserRepository extends JpaRepository<RoomUser, Long> {
     @Query("select ru from RoomUser ru where ru.room.roomId = :roomId and ru.user.userId = :userId")
     RoomUser findByRoomAndUser(Integer roomId, Integer userId);
+
+    @Query("select count(*) from RoomUser ru where ru.room.roomId = :roomId")
+    int getNumberOfMembers(Integer roomId);
 }

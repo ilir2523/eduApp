@@ -2,6 +2,7 @@ package com.project.eduappbackend.services;
 
 import com.project.eduappbackend.dtos.QuizDto;
 import com.project.eduappbackend.dtos.RoomDto;
+import com.project.eduappbackend.dtos.TakeQuiz;
 
 import java.util.List;
 
@@ -18,4 +19,8 @@ public interface RoomService {
     boolean checkIfMemberRoom(Integer roomId, Integer userId);
 
     List<QuizDto> getQuizesForRoom(Integer roomId) throws Exception;
+
+    void createQuiz(QuizDto quizDto) throws Exception;
+
+    QuizDto takeQuiz(TakeQuiz takeQuiz) throws Exception;
 }
